@@ -3,11 +3,10 @@ import {
   Grid,
   Icon,
   Typography,
-  Menu,
-  MenuItem,
   TextField,
   Button,
 } from "@mui/material";
+import { Menu,MenuItem } from "@material-ui/core";
 
 export default function DetailsContainer({
   article,
