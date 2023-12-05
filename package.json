@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "postinstall": "npm install --production"
-  },
+    "postinstall": "npm install --production && npm run build-once",
+    "build-once": "npm run build"  },
   "keywords": [],
   "author": "",
   "license": "ISC",
