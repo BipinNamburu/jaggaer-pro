@@ -6,9 +6,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    // filename: 'bundle.js', // Let Webpack use the default filename
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // Clean the 'dist' directory before each build
+    clean: true,
   },
   module: {
     rules: [
@@ -36,7 +35,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'public'),
-          to: path.resolve(__dirname, 'dist'), // Adjust the destination folder as needed
+          to: path.resolve(__dirname, 'dist'),
         },
       ],
     }),
