@@ -47,8 +47,9 @@ module.exports = {
     },
     hot: true,
     open: true,
-    host: '0.0.0.0', // or 'localhost'
+    host: '0.0.0.0',
     port: process.env.PORT || 3000,
+    allowedHosts: 'all',
   },
   performance: {
     hints: false,
