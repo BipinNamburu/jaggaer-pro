@@ -91,7 +91,7 @@ export default function App() {
           position="sticky"
           sx={{
             bgcolor: "white",
-            boxShadow: 0,
+            boxShadow: scrollPosition > 0 ? "0px 4px 8px rgba(0, 0, 0, 0.1)" : "none",
             borderBottom: 1,
             borderColor: "#D3D3D3",
             height: 64,
@@ -148,7 +148,8 @@ export default function App() {
                         elevation={3}
                         className="smallPaper"
                         onClick={() => switchImage(index + 1)}
-                      >
+                        sx={{boxShadow:0,border: "1px solid #D3D3D3"}}
+                        >
                         <img src={src} className="pieceImage" />
                       </Paper>
                     </Grid>
@@ -163,6 +164,7 @@ export default function App() {
                     width: "100%",
                     position: "relative",
                   }}
+                  sx={{boxShadow:0,border: "1px solid #D3D3D3"}}
                   onMouseEnter={handleHover}
                   onMouseLeave={handleMouseLeave}
                 >
