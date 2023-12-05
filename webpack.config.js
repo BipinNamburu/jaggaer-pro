@@ -2,12 +2,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    // filename: 'bundle.js', // Let Webpack use the default filename
+    path: path.resolve(__dirname, 'dist'),
+    clean: true, // Clean the 'dist' directory before each build
   },
   module: {
     rules: [
@@ -38,7 +39,7 @@ module.exports = {
           to: path.resolve(__dirname, 'dist'), // Adjust the destination folder as needed
         },
       ],
-    })
+    }),
   ],
   devServer: {
     static: {
@@ -46,9 +47,12 @@ module.exports = {
     },
     hot: true,
     open: true,
+    host: '0.0.0.0', // or 'localhost'
+    port: process.env.PORT || 3000,
   },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
-    maxAssetSize: 512000
-  },};
+    maxAssetSize: 512000,
+  },
+};
